@@ -1,1 +1,367 @@
-abc
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Book
+{
+    int id;
+    string name;
+    string author;
+    bool issued;
+    Book* next;
+};
+
+Book* head = NULL;
+
+// Add Book
+void addBook()
+{
+    Book* newBook = new Book;
+
+    cout << "\nEnter Book ID: ";
+    cin >> newBook->id;
+
+    // Check for duplicate Book ID
+    Book* temp = head;
+
+    if (head != NULL)
+    {
+        do
+        {
+            if (temp->id == newBook->id)
+            {
+                cout << "Book ID already
+exists.\n";
+                delete newBook;
+                return;
+            }
+
+            temp = temp->next;
+
+        } while (temp != head);
+    }
+
+    cin.ignore();
+
+    cout << "Enter Book Name: ";
+    getline(cin, newBook->name);
+
+    cout << "Enter Author Name: ";
+    getline(cin, newBook->author);
+
+    newBook->issued = false;
+
+    if (head == NULL)
+    {
+        head = newBook;
+        newBook->next = head;
+    }
+    else
+    {
+        temp = head;
+
+        while (temp->next != head)
+        {
+            temp = temp->next;
+        }
+
+        temp->next = newBook;
+        newBook->next = head;
+    }
+
+    cout << "\nBook added successfully!\n";
+}
+
+// Display Books
+void displayBooks()
+{
+    if (head == NULL)
+    {
+        cout << "\nNo books available.\n";
+        return;
+    }
+
+    Book* temp = head;
+
+    cout << "\n===== Library Books =====\n";
+
+    do
+    {
+        cout << "\nBook ID   : " << temp->id;
+        cout << "\nBook Name : " << temp->name;
+        cout << "\nAuthor    : " << temp->author;
+
+        cout << "\nStatus    : ";
+
+        if (temp->issued)
+            cout << "Issued";
+        else
+            cout << "Available";
+
+        cout << "\n-------------------------\n";
+
+        temp = temp->next;
+
+    } while (temp != head);
+}
+
+// Search Book
+void searchBook()
+{
+    if (head == NULL)
+    {
+        cout << "\nNo books available.\n";
+        return;
+    }
+
+    int id;
+
+    cout << "\nEnter Book ID to search: ";
+    cin >> id;
+
+    Book* temp = head;
+
+    do
+    {
+        if (temp->id == id)
+        {
+            cout << "\nBook Found!\n";
+            cout << "Book ID   : " << temp->id << endl;
+            cout << "Book Name : " << temp->name << endl;
+            cout << "Author    : " << temp->author << endl;
+
+            cout << "Status    : ";
+
+            if (temp->issued)
+                cout << "Issued\n";
+            else
+                cout << "Available\n";
+
+            return;
+        }
+
+        temp = temp->next;
+
+    } while (temp != head);
+
+    cout << "\nBook not found.\n";
+}
+
+// Issue Book
+void issueBook()
+{
+    if (head == NULL)
+    {
+        cout << "\nNo books available.\n";
+        return;
+    }
+
+    int id;
+
+    cout << "\nEnter Book ID to issue: ";
+    cin >> id;
+
+    Book* temp = head;
+
+    do
+    {
+        if (temp->id == id)
+        {
+            if (temp->issued)
+                cout << "\nBook is already issued.\n";
+            else
+            {
+                temp->issued = true;
+                cout << "\nBook issued successfully!\n";
+            }
+
+            return;
+        }
+
+        temp = temp->next;
+
+    } while (temp != head);
+
+    cout << "\nBook not found.\n";
+}
+
+// Return Book
+void returnBook()
+{
+    if (head == NULL)
+    {
+        cout << "\nNo books available.\n";
+        return;
+    }
+
+    int id;
+
+    cout << "\nEnter Book ID to return: ";
+    cin >> id;
+
+    Book* temp = head;
+
+    do
+    {
+        if (temp->id == id)
+        {
+            if (!temp->issued)
+                cout << "\nBook is already available.\n";
+            else
+            {
+                temp->issued = false;
+                cout << "\nBook returned successfully!\n";
+            }
+
+            return;
+        }
+
+        temp = temp->next;
+
+    } while (temp != head);
+
+    cout << "\nBook not found.\n";
+}
+
+// Delete Book
+void deleteBook()
+{
+    if (head == NULL)
+    {
+        cout << "\nNo books available.\n";
+        return;
+    }
+
+    int id;
+
+    cout << "\nEnter Book ID to delete: ";
+    cin >> id;
+
+    Book* current = head;
+    Book* previous = NULL;
+
+    do
+    {
+        if (current->id == id)
+        {
+            // Only one node
+            if (current->next == head &&
+                current == head)
+            {
+                head = NULL;
+            }
+            // Deleting the first node
+            else if (current == head)
+            {
+                Book* last = head;
+
+                while (last->next != head)
+                {
+                    last = last->next;
+                }
+
+                head = head->next;
+                last->next = head;
+            }
+            // Deleting another node
+            else
+            {
+                previous->next = current->next;
+            }
+
+            delete current;
+
+            cout << "\nBook deleted successfully!\n";
+            return;
+        }
+
+        previous = current;
+        current = current->next;
+
+    } while (current != head);
+
+    cout << "\nBook not found.\n";
+}
+
+// Main Function
+int main()
+{
+    int choice;
+
+    do
+    {
+        cout << "\n===== LIBRARY MANAGEMENT SYSTEM =====";
+        cout << "\n1. Add Book";
+        cout << "\n2. Display Books";
+        cout << "\n3. Search Book";
+        cout << "\n4. Issue Book";
+        cout << "\n5. Return Book";
+        cout << "\n6. Delete Book";
+        cout << "\n7. Exit";
+
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+            case 1:
+                addBook();
+                break;
+
+            case 2:
+                displayBooks();
+                break;
+
+            case 3:
+                searchBook();
+                break;
+
+            case 4:
+                issueBook();
+                break;
+
+            case 5:
+                returnBook();
+                break;
+
+            case 6:
+                deleteBook();
+                break;
+
+            case 7:
+                cout << "\nThank you!\n";
+                break;
+
+            default:
+                cout << "\nInvalid choice.\n";
+        }
+
+    } while (choice != 7);
+
+    // Free remaining nodes before exiting
+    while (head != NULL)
+    {
+        Book* temp = head;
+
+        if (head->next == head)
+        {
+            head = NULL;
+        }
+        else
+        {
+            Book* last = head;
+
+            while (last->next != head)
+            {
+                last = last->next;
+            }
+
+            head = head->next;
+            last->next = head;
+        }
+
+        delete temp;
+    }
+
+    return 0;
+}
