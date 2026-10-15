@@ -1,1 +1,276 @@
-abc
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 1
+
+Enter Book ID: 101
+Enter Book Name: Data Structures
+Enter Author Name: Seymour Lipschutz
+
+Book added successfully!
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 1
+
+Enter Book ID: 102
+Enter Book Name: C++ Program
+Enter Author Name: Bjarne Stroustrup
+
+Book added successfully!
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 1
+
+Enter Book ID: 103
+Enter Book Name: Python Programming
+Enter Author Name: Eric Matthes
+
+Book added successfully!
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 1
+
+Enter Book ID: 104
+Enter Book Name: Let Us C
+Enter Author Name: Yashvant Kanetkar
+
+Book added successfully!
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 1
+
+Enter Book ID: 105
+Enter Book Name: Wings Of Fire
+Enter Author Name: A.P.J. Abdul Kalam
+
+Book added successfully!
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 106
+
+Invalid choice.
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 1
+
+Enter Book ID: 107
+Enter Book Name: Rich Dad Poor Dad
+Enter Author Name: Robert Kiyosaki
+
+Book added successfully!
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 2
+
+===== Library Books =====
+
+Book ID    : 101
+Book Name  : Data Structures
+Author     : Seymour Lipschutz
+Status     : Available
+--------------------
+
+Book ID    : 102
+Book Name  : C++ Program
+Author     : Bjarne Stroustrup
+Status     : Available
+--------------------
+
+Book ID    : 103
+Book Name  : Python Programming
+Author     : Eric Matthes
+Status     : Available
+--------------------
+
+Enter Book ID to search: 107
+
+Book Found!
+Book ID    : 107
+Book Name  : Rich Dad Poor Dad
+Author     : Robert Kiyosaki
+Status     : Available
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 3
+
+Enter Book ID to search: 104
+
+Book Found!
+Book ID    : 104
+Book Name  : Let Us C
+Author     : Yashvant Kanetkar
+Status     : Available
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 4
+
+Enter Book ID to issue: 105
+
+Book issued successfully!
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+
+Book ID    : 104
+Book Name  : Let Us C
+Author     : Yashvant Kanetkar
+Status     : Available
+--------------------
+
+Book ID    : 105
+Book Name  : Wings Of Fire
+Author     : A.P.J. Abdul Kalam
+Status     : Available
+--------------------
+
+Book ID    : 107
+Book Name  : Rich Dad Poor Dad
+Author     : Robert Kiyosaki
+Status     : Available
+--------------------
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 3
+
+Enter Book ID to search: 102
+
+Book Found!
+Book ID    : 102
+Book Name  : C++ Program
+Author     : Bjarne Stroustrup
+Status     : Available
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 4
+
+Enter Book ID to issue: 103
+
+Book issued successfully!
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 5
+
+Enter Book ID to return: 104
+
+Book is already available.
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 6
+
+Enter Book ID to delete: 102
+
+Book deleted successfully!
+
+===== LIBRARY MANAGEMENT SYSTEM =====
+1. Add Book
+2. Display Books
+3. Search Book
+4. Issue Book
+5. Return Book
+6. Delete Book
+7. Exit
+Enter your choice: 7
+
+Thank you!
+
+Process exited after 639 seconds with return value 0
+Press any key to continue . . .
