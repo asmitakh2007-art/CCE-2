@@ -68,11 +68,15 @@ Step 9: Exit The program stops when the user selects Exit.
 
 Enter your choice: 1
 
-Enter Book ID: 101 Enter Book Name: Data Structures Enter Author Name: Rajiv Sharma
+ Enter Book ID: 101
+ Enter Book Name: Data Structures
+ Enter Author Name: Rajiv Sharma
 
 Enter your choice: 1
 
-Enter Book ID: 102 Enter Book Name: C++ Programming Enter Author Name: Bjarne Stroustrup
+ Enter Book ID: 102
+ Enter Book Name: C++ Programming
+ Enter Author Name: Bjarne Stroustrup
 
 Enter your choice: 2
 
@@ -89,7 +93,9 @@ Delete Book
 Exit
 Enter your choice: 1
 
-Enter Book ID: 101 Enter Book Name: Data Structures Enter Author Name: Rajiv Sharma
+ Enter Book ID: 101 
+ Enter Book Name: Data Structures
+ Enter Author Name: Rajiv Sharma
 
 Book added successfully!
 
