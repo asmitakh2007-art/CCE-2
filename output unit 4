@@ -1,0 +1,43 @@
+Output 1: Node Name – bin
+
+Enter node name: bin
+Full path: //bin
+Siblings: home etc
+Subtree size: 1
+
+--------------------------------
+Process exited after 5.084 seconds with return value 0
+Press any key to continue . . .
+
+Output 2: Node Name – home
+
+Enter node name: home
+Full path: //home
+Siblings: etc bin
+Subtree size: 5
+
+--------------------------------
+Process exited after 7.723 seconds with return value 0
+Press any key to continue . . .
+
+Output 3: Node Name – asmita
+
+Enter node name: asmita
+Full path: //home/asmita
+Siblings: student
+Subtree size: 3
+
+--------------------------------
+Process exited after 6.005 seconds with return value 0
+Press any key to continue . . .
+
+Output 4: Node Name – etc
+
+Enter node name: etc
+Full path: //etc
+Siblings: home bin
+Subtree size: 2
+
+--------------------------------
+Process exited after 4.383 seconds with return value 0
+Press any key to continue . . .
