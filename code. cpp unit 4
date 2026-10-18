@@ -1,0 +1,110 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+struct Node {
+    string name;
+    Node *child, *sibling, *parent;
+
+    Node(string n, Node *p = NULL) {
+        name = n;
+        child = sibling = NULL;
+        parent = p;
+    }
+};
+
+void add(Node *p, Node *c) {
+    if (!p->child)
+        p->child = c;
+    else {
+        Node *t = p->child;
+        while (t->sibling)
+            t = t->sibling;
+        t->sibling = c;
+    }
+}
+
+Node *search(Node *r, string name) {
+    if (!r) return NULL;
+    if (r->name == name) return r;
+
+    Node *t = search(r->child, name);
+    return t ? t : search(r->sibling, name);
+}
+
+void path(Node *n) {
+    if (!n) return;
+    if (n->parent) path(n->parent);
+    if (n->name != "")
+        cout << "/" << n->name;
+}
+
+int size(Node *n) {
+    if (!n) return 0;
+
+    int count = 1;
+    for (Node *t = n->child; t; t = t->sibling)
+        count += size(t);
+
+    return count;
+}
+
+int main() {
+    Node *root = new Node("");
+    Node *home = new Node("home", root);
+    Node *etc = new Node("etc", root);
+    Node *bin = new Node("bin", root);
+
+    add(root, home);
+    add(root, etc);
+    add(root, bin);
+
+    Node *asmita = new Node("asmita", home);
+    Node *student = new Node("student", home);
+
+    add(home, asmita);
+    add(home, student);
+
+    add(asmita, new Node("notes.txt", asmita));
+    add(asmita, new Node("project", asmita));
+    add(etc, new Node("config.txt", etc));
+
+    string target;
+    cout << "Enter node name: ";
+    cin >> target;
+
+    Node *n = search(root, target);
+
+    if (!n) {
+        cout << "Node not found\n";
+        return 0;
+    }
+
+    cout << "Full path: ";
+    if (n == root)
+        cout << "/";
+    else
+        path(n);
+
+    cout << "\nSiblings: ";
+
+    if (!n->parent) {
+        cout << "None";
+    } else {
+        bool found = false;
+
+        for (Node *t = n->parent->child; t; t = t->sibling) {
+            if (t != n) {
+                cout << t->name << " ";
+                found = true;
+            }
+        }
+
+        if (!found)
+            cout << "None";
+    }
+
+    cout << "\nSubtree size: " << size(n) << endl;
+
+    return 0;
+}
