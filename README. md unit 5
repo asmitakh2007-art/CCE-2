@@ -1,0 +1,117 @@
+1. Problem Statement
+
+Develop a C++ program to represent university departments and their communication links using an adjacency matrix. The program should display the connection status between departments and indicate whether communication links exist between any two departments.
+
+2. Introduction
+A university consists of different departments, such as Computer Engineering, Electronics and Telecommunication, Mechanical Engineering, and Civil Engineering. These departments may communicate or share information with each other.
+A graph is a data structure used to represent departments and their communication links. In this program, departments are represented as vertices, and communication links are represented as edges. An adjacency matrix is used to store and display the connections between departments in a simple tabular form.
+
+3. Objectives
+
+To understand the concept of graphs and adjacency matrices.
+
+To represent university departments as vertices.
+
+To store communication links between departments.
+
+To display the adjacency matrix.
+To check the connection status between any two departments.
+
+4. Short Theory
+An adjacency matrix is a two-dimensional array used to represent a graph. If there are  departments, the matrix contains  elements.
+
+1 indicates that a communication link exists between two departments.
+
+0 indicates that no communication link exists.
+The diagonal elements are 0 when a department has no link to itself.
+
+For an undirected graph, the adjacency matrix is symmetric because if Department A is connected to Department B, Department B is also connected to Department A.
+
+For example, if Computer Engineering is connected to Electronics Engineering, the corresponding matrix entries are both 1.
+
+5. Algorithm
+Start the program.
+
+Read the number of university departments.
+
+Enter the names of all departments.
+
+Initialize the adjacency matrix with zeros.
+
+Read the communication links between departments.
+
+Set the corresponding matrix entries to 1.
+
+Display the adjacency matrix.
+
+Accept two department names from the user.
+
+Check the matrix entry for the selected departments.
+
+Display whether a communication link exists.
+Stop the program.
+
+8. Sample Input
+
+Enter number of departments: 4
+Enter department names:
+Computer
+ENTC
+Mechanical
+Civil
+Enter number of communication links: 3
+Enter linked department indices (1-based):
+1 2
+1 3
+2 4
+
+Enter two department indices to check: 1 2
+
+9. Sample Output
+
+Adjacency Matrix:
+   Computer ENTC Mechanical Civil
+Computer 0  1  1  0
+ENTC     1  0  0  1
+Mechanical 1  0  0  0
+Civil    0  1  0  0
+
+Communication link exists between Computer and ENTC.
+
+10. Advantages
+
+Simple and easy to implement.
+
+Clearly represents connections between departments.
+
+Checks a direct connection in constant time. 
+
+Suitable for graphs with a small or moderate number of departments.
+
+Makes it easy to identify all direct communication links.
+
+11. Disadvantages
+Requires  memory, even when there are few links.
+
+Adding a new department requires resizing the matrix.
+
+It does not directly show the complete communication path between departments.
+
+It is less memory-efficient for very large, sparsely connected networks.
+
+12. Applications
+
+Representing communication links between university departments.
+
+Designing computer networks within educational institutions.
+
+Representing connections between offices in an organization.
+
+Modeling transport routes between locations.
+Representing social networks and other connected systems.
+
+Analyzing direct connections in network topology.
+
+13. Conclusion
+
+The C++ program successfully represents university departments and their communication links using an adjacency matrix. It accepts department names, stores connections, displays the matrix, and checks the connection status between two departments. This experiment helps in understanding graph representation and the practical use of adjacency matrices in network modeling.
